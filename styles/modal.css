@@ -2,7 +2,7 @@
 
 
 #modal {
-    /* display: none; */
+    display: none;
     position: fixed;
     z-index: 100;
     left: 0;
