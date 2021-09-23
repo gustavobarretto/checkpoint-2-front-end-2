@@ -1,4 +1,6 @@
 @import url('./common.css');
+@import url('./modal.css');
+
 header {
     display: flex;
     background: linear-gradient(90deg, var(--primary), var(--secondary));

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/lista-tarefas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <title>ToDo</title>
 </head>
 
@@ -21,14 +22,31 @@
         </div>
     </header>
 
-
+    <!-- Botão que abre o modal -->
     <form class="nova-tarefa">
         <div class="not-done "></div>
         <input type="text" placeholder="Nova tarefa">
-        <button>
+        <button class="addTarefa">
       <img src="./assets/plus.png" alt="Adicionar Tarefa">
     </button>
     </form>
+
+    <!-- Modal onde se adiciona a tarefa -->
+    <div id="modal">
+        <form>
+            <i class="fas fa-times fa-lg"></i>
+            <label for="">Tarefa</label>
+            <input type="text" placeholder="Digite sua tarefa">
+            <label for="">Data de Entrega</label>
+            <input type="date">
+            <label for="">Descrição da Tarefa</label>
+            <textarea type="text" placeholder="Descreva sua tarefa"></textarea>
+            <div class=buttons-modal>
+                <button type="reset">Limpar</button>
+                <button type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
 
 
     <ul class="tarefas-pendentes">
@@ -79,6 +97,7 @@
             </div>
         </li>
     </ul>
+    <script src="./js/modal.js"></script>
 
 </body>
 
