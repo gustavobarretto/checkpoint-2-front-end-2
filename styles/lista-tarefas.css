@@ -138,8 +138,9 @@ a {
     justify-self: flex-end;
 }
 
-.tasks p {
+.tasks .acc {
     grid-area: acc;
+    display: none;
 }
 
 
