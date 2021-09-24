@@ -23,3 +23,8 @@ button {
   letter-spacing: 0.05rem;
   cursor: pointer;
 }
+
+li {
+  display: none;
+
+}
