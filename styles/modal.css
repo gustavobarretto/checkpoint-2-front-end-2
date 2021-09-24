@@ -14,34 +14,61 @@
 
 }
 
-#modal form i {
-    align-self: flex-end;
-    color: gray;
-    cursor: pointer;
-    padding: .8rem .5rem;
-
-}
-
-#modal form i:hover {
-    color: rgb(95, 95, 95);
-    background-color: lightgray;
-    border-radius: 50%;
-    padding: .8rem .5rem;
-}
-
 #modal form {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     background-color: #f6f6f6;
     margin: 10% auto;
-    padding: 1.5rem;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);   
     width: 50%;
     border-radius: .2rem;
     font-family: inherit;
+    border-bottom: 3.5px solid var(--secondary);
+
 
 }
+
+#modal form .modal-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #e9e9e9;
+
+}
+
+#modal input, textarea {
+    outline-style: none;
+    border: none;
+}
+
+/* focus input and textarea */
+
+#modal input:focus, textarea:focus {
+    border-bottom: 0.5px solid var(--secondary);
+    
+    transform-origin: bottom solid 1px var(--secondary) 
+}
+
+#modal .modal-header i {
+    float: right;
+    color: gray;
+    cursor: pointer;
+    padding: 1rem;
+
+}
+
+
+#modal form i:hover {
+    color: rgb(95, 95, 95);
+    border-radius: 50%;
+    padding: 1rem;
+
+}
+
 
 #modal input {
     height: 2rem;
@@ -77,6 +104,7 @@
 
 #modal form .buttons-modal button[type="reset"]:hover {
     background-color: lightgray;
+    transition: background-color .5s ease-in-out;
     
 }
 
@@ -90,11 +118,13 @@
 
 #modal form .buttons-modal button[type="submit"]:hover {
     background-color: #2d5eff;
+    transition: background-color .5s ease-in-out;
     
 }
 
 #modal form .buttons-modal button[type="submit"]:active {
     background-color: #003cff;
+    
     
 }
 

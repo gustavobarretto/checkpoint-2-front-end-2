@@ -21,88 +21,45 @@
             <div class="user-image"></div>
         </div>
     </header>
-
-    <!-- Botão que abre o modal -->
-    <form class="nova-tarefa">
-        <div class="not-done "></div>
-        <input type="text" placeholder="Nova tarefa">
-        <button class="addTarefa">
-      <img src="./assets/plus.png" alt="Adicionar Tarefa">
-    </button>
-    </form>
-
-    <!-- Modal onde se adiciona a tarefa -->
-    <div id="modal">
-        <form>
-            <i class="fas fa-times fa-lg"></i>
-            <label for="">Tarefa</label>
-            <input type="text" placeholder="Digite sua tarefa">
-            <label for="">Data de Entrega</label>
-            <input type="date">
-            <label for="">Descrição da Tarefa</label>
-            <textarea type="text" placeholder="Descreva sua tarefa"></textarea>
-            <div class=buttons-modal>
-                <button type="reset">Limpar</button>
-                <button type="submit">Salvar</button>
-            </div>
+    <main>
+        <!-- Botão que abre o modal -->
+        <form class="nova-tarefa">
+            <button class="addTarefa">
+                <img src="./assets/addBtn.svg" alt="Adicionar Tarefa">
+            </button>
+            <input type="text" placeholder="Nova tarefa">
         </form>
-    </div>
-
-
-    <ul class="tarefas-pendentes">
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion accordion">
-                <p class="nome">EDU TÁ COM SONO TAMBÉM</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-                <div class="panel">
-                    <p>Descrição da Tarefa</p>
+    
+        <!-- Modal onde se adiciona a tarefa -->
+        <div id="modal">
+            <form>
+                <div class="modal-header">
+                    <i class="fas fa-times fa-lg"></i>
                 </div>
-            </div>
-        </li>
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion accordion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-                <div class="panel">
-                    <p>Descrição da Tarefa</p>
+                <label for="">Tarefa</label>
+                <input type="text" placeholder="Digite sua tarefa">
+                <label for="">Data de Entrega</label>
+                <input type="date">
+                <label for="">Descrição da Tarefa</label>
+                <textarea type="text" placeholder="Descreva sua tarefa"></textarea>
+                <div class=buttons-modal>
+                    <button type="reset">Limpar</button>
+                    <button type="submit">Salvar</button>
                 </div>
-            </div>
-        </li>
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-        </li>
-    </ul>
+            </form> 
+        </div>
+        
+        <!-- Fim do modal -->
+        
+        <section class="tasks">
+            <img src="./assets/box.svg" alt="">
+            <h5>Título da tarefa</h5>
+            <i class="far fa-trash-alt"></i>
+            <p class="date">24/09/21</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, fugit dolorum deserunt illo libero deleniti, architecto necessitatibus quis voluptatum perspiciatis accusamus rerum ea amet incidunt. Fugit veniam ex nesciunt ad?</p>
+        </section>
+    </main>
 
-    <h2 class="titulo-concluida">Tarefas concluídas</h2>
-    <ul class="titulo-concluida">
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-        </li>
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-        </li>
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-        </li>
-    </ul>
     <script src="./js/modal.js"></script>
     <script src="./js/accordion.js"></script>
 
