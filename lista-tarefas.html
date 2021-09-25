@@ -33,74 +33,31 @@
 
             <!-- Modal onde se adiciona a tarefa -->
             <div id="modal">
-                <form>
+                <form name="formtask">
                     <div class="modal-header">
                         <i class="fas fa-times fa-lg"></i>
                     </div>
                     <label for="">Tarefa</label>
-                    <input type="text" placeholder="Digite sua tarefa">
+                    <input type="text" placeholder="Digite sua tarefa" name="task">
                     <label for="">Data de Entrega</label>
-                    <input type="date">
+                    <input type="date" name="date">
                     <label for="">Descrição da Tarefa</label>
                     <textarea type="text"
-                        placeholder="Descreva sua tarefa"></textarea>
+                        placeholder="Descreva sua tarefa" name="description"></textarea>
                     <div class=buttons-modal>
                         <button type="reset">Limpar</button>
-                        <button type="submit">Salvar</button>
+                        <button type="submit" name="submit">Salvar</button>
                     </div>
                 </form>
             </div>
 
             <!-- Fim do modal -->
 
-            <section class="tasks">
-                <img src="./assets/box.svg" alt="">
-                <h5>Título da tarefa</h5>
-                <i class="far fa-trash-alt"></i>
-                <p class="date">24/09/21</p>
-                <p class="acc">Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Nam, fugit dolorum deserunt illo libero
-                    deleniti, architecto necessitatibus quis voluptatum
-                    perspiciatis accusamus rerum ea amet incidunt. Fugit veniam
-                    ex nesciunt ad?</p>
-            </section>
-            <section class="tasks">
-                <img src="./assets/box.svg" alt="">
-                <h5>Título da tarefa de Stefany</h5>
-                <i class="far fa-trash-alt"></i>
-                <p class="date">24/09/21</p>
-                <p class="acc">Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Nam, fugit dolorum deserunt illo libero
-                    deleniti, architecto necessitatibus quis voluptatum
-                    perspiciatis accusamus rerum ea amet incidunt. Fugit veniam
-                    ex nesciunt ad?</p>
-            </section>
-            <section class="tasks">
-                <img src="./assets/box.svg" alt="">
-                <h5>Título da tarefa de Eduardo</h5>
-                <i class="far fa-trash-alt"></i>
-                <p class="date">24/09/21</p>
-                <p class="acc">Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Nam, fugit dolorum deserunt illo libero
-                    deleniti, architecto necessitatibus quis voluptatum
-                    perspiciatis accusamus rerum ea amet incidunt. Fugit veniam
-                    ex nesciunt ad?</p>
-            </section>
-            <section class="tasks">
-                <img src="./assets/box.svg" alt="">
-                <h5>Título da tarefa de Gugu</h5>
-                <i class="far fa-trash-alt"></i>
-                <p class="date">24/09/21</p>
-                <p class="acc">Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Nam, fugit dolorum deserunt illo libero
-                    deleniti, architecto necessitatibus quis voluptatum
-                    perspiciatis accusamus rerum ea amet incidunt. Fugit veniam
-                    ex nesciunt ad?</p>
-            </section>
+            
         </main>
 
-        <script src="./js/modal.js"></script>
-        <script src="./js/accordion.js"></script>
+        <script src="./js/modal.js" type="module"></script>
+        <script src="./js/accordion.js" type="module"></script>
         <script></script>
 
     </body>
