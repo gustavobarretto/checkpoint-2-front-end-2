@@ -23,3 +23,6 @@ window.addEventListener("click", event => {
         modal.style.display = "none";
     }  
 })
+
+// Inserindo tarefa do modal
+

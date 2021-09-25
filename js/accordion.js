@@ -1,6 +1,6 @@
 const tasks = document.querySelectorAll(".tasks");
 
-
+// Showing the accordion
 tasks.forEach(tasks => {
     tasks.addEventListener("click", () => {
         tasks.classList.toggle("active");
@@ -18,7 +18,7 @@ tasks.forEach(tasks => {
     });
 });
 
-
+// Delete task
 tasks.forEach(tasks => {
     const trashBin = tasks.childNodes[5];
     trashBin.addEventListener("click", () => {
@@ -28,24 +28,27 @@ tasks.forEach(tasks => {
     });
 });
 
+// Checkbox function
 const checkBox = document.querySelectorAll(".tasks img");
 
 checkBox.forEach(checkBox => {
     checkBox.addEventListener('click', () => {
-        checkBox.parentNode.classList.toggle("checked");
-        
-        checkBox.parentNode.classList.contains("checked") ?
-            checkBox.src = "../assets/checkbox.svg" :
-            checkBox.src = "../assets/box.svg";
-        
-        // Onde comecei a acrescentar 
-        tasks.forEach( task => {
-            if(task.classList.contains("checked")) {
-                const main = task.parentElement
-                main.insertBefore(task, undefined)
-            } 
-        })
-        // Onde termina meu acréscimo
-        // Documentação https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore   
-    });
-});
+    checkBox.parentNode.classList.toggle("checked");
+    checkBox.parentNode.classList.contains("checked") ?
+    checkBox.src = "../assets/checkbox.svg" :
+    checkBox.src = "../assets/box.svg";
+    setTimeout( () => {
+        organizeTasks(checkBox)
+    }, 600);  
+})});
+
+const organizeTasks = (checkBox) => {
+    if(checkBox.parentNode.classList.contains("checked")) {
+        ((checkBox.parentElement).parentElement) // get the Main
+        .insertAdjacentElement('beforeend', checkBox.parentElement)
+
+    } else {
+        ((checkBox.parentElement).parentElement).children[1] // get the firstChild of the Main
+        .insertAdjacentElement('afterend', checkBox.parentElement)
+    };
+}

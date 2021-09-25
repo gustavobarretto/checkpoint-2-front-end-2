@@ -53,6 +53,7 @@ a {
     box-shadow: 2px 2px 10px lightgrey;
     border-radius: .2rem;
     z-index: 20;
+    border-left: 4px solid white;
 }
 
 .nova-tarefa input[type=text] {
@@ -114,8 +115,13 @@ a {
     margin-top: 1rem;
     padding: 1rem;
     box-shadow: 2px 2px 10px lightgrey;
-    border-radius: .2rem;
-    
+    border-radius: 0 .2rem .2rem 0;
+    border-left: 4px solid var(--secondary);  
+}
+
+.tasks:hover {
+    background-color: #ECE5F5;
+    transition: background-color .5s ease-in-out;
 }
 
 .tasks i {
