@@ -6,21 +6,21 @@
 	
 1. A primeira página deve ter um formulário com os inputs:   
 	- Data de criação: o usuário não poderá alterar esse input, mas ele deve ser exibido.  
-	- ~~Data limite da tarefa: data que o usuário deseja terminar aquela tarefa.  
-	- ~~Descrição: texto da tarefa.  
-	- ~~Botão de submit.  
+	- <s>Data limite da tarefa: data que o usuário deseja terminar aquela tarefa.</s>  
+	- <s>Descrição: texto da tarefa.</s>  
+	- <s>Botão de submit.</s>  
 
 2. Validações:
-	- ~~Nenhum campo pode ser vazio.
+	- <s>Nenhum campo pode ser vazio.</s>
 	- A descrição deve ter mais que 10 caracteres.
-	- ~~**IMPORTANTE**: Quando o usuário não preencher corretamente deve ser exibido um alerta indicando que existem erros na criação da tarefa.
+	- <s>**IMPORTANTE**: Quando o usuário não preencher corretamente deve ser exibido um alerta indicando que existem erros na criação da tarefa.</s>
 	- **OPCIONAL**: a data limite da tarefa deve ser hoje ou no futuro.
 
 
 3. Funcionalidades:
-	- ~~Quando o usuário clicar em submit, se ele passar pela validação, a anotação deve ser exibida na tela por meio de um card.
-	- ~~No card da anotação deve ter um botão para excluir a anotação. Quando ele for clicado deverá ser exibido um aviso confirmando a intenção de excluir a anotação. Se o usuário confirmar a intenção de excluir, o card desta nota deve desaparecer.
-	- ~~Ainda no card da anotação deverá existir um checkbox que ao ser clicado faz o texto daquela anotação ficar tachado. Tarefa concluida.
+	- <s>Quando o usuário clicar em submit, se ele passar pela validação, a anotação deve ser exibida na tela por meio de um card.</s>
+	- <s>No card da anotação deve ter um botão para excluir a anotação. Quando ele for clicado deverá ser exibido um aviso confirmando a intenção de excluir a anotação. Se o usuário confirmar a intenção de excluir, o card desta nota deve desaparecer.</s>
+	- <s>Ainda no card da anotação deverá existir um checkbox que ao ser clicado faz o texto daquela anotação ficar tachado. Tarefa concluida.</s>
 	- **Opcional**: Escolher cor do fundo do card - (versão dark)
 
 4. Agora nós vamos criar uma outra página, onde iremos consumir uma api de lista de tarefas.
