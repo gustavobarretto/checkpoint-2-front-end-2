@@ -31,11 +31,22 @@ tasks.forEach(tasks => {
 const checkBox = document.querySelectorAll(".tasks img");
 
 checkBox.forEach(checkBox => {
+    let taskChecked;
+    console.log(checkBox)
     checkBox.addEventListener('click', () => {
         checkBox.parentNode.classList.toggle("checked");
-
+        
         checkBox.parentNode.classList.contains("checked") ?
             checkBox.src = "../assets/checkbox.svg" :
             checkBox.src = "../assets/box.svg";
+        
+        // Onde comecei a acrescentar 
+        tasks.forEach( task => {
+            if(task.classList.contains("checked")) {
+                const main = task.parentElement
+                main.insertBefore(task, undefined)
+            } 
+        })
+        // Onde termina meu acréscimo   
     });
 });
