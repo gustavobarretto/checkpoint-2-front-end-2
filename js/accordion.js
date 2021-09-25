@@ -1,31 +1,41 @@
-const accordion = document.querySelectorAll(".tasks");
+const tasks = document.querySelectorAll(".tasks");
 
-accordion.forEach(accordion => {
-    accordion.addEventListener("click", () => {
-        accordion.classList.toggle("active");
-        let panel = accordion.lastElementChild;
-        const trashBin = accordion.childNodes[5]
-        
-        console.log(trashBin.classList[2])
-
-        if(trashBin.classList[2] == "active") {
-            trashBin.classList.toggle("active")
-            accordion.classList.toggle("active")
-        } else {
-            if (panel.style.display == "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }   
-        }
-    })})
-
-    const tasks = document.querySelectorAll(".tasks");
 
 tasks.forEach(tasks => {
-    const trashBin = tasks.childNodes[5]
+    tasks.addEventListener("click", () => {
+        tasks.classList.toggle("active");
+        let panel = tasks.lastElementChild;
+        const trashBin = tasks.childNodes[5];
+
+        if (trashBin.classList.contains("active") || tasks.classList.contains("checked")) {
+            trashBin.classList.toggle("active");
+            tasks.classList.toggle("active");
+        } else {
+            panel.style.display == "block" ?
+                panel.style.display = "none" :
+                panel.style.display = "block";
+        }
+    });
+});
+
+
+tasks.forEach(tasks => {
+    const trashBin = tasks.childNodes[5];
     trashBin.addEventListener("click", () => {
-        trashBin.classList.toggle("active")
-        const deleteTask = confirm("Deseja realmente deletar?")
+        trashBin.classList.toggle("active");
+        const deleteTask = confirm("Deseja realmente deletar?");
         deleteTask ? tasks.remove() : "";
-    })})
+    });
+});
+
+const checkBox = document.querySelectorAll(".tasks img");
+
+checkBox.forEach(checkBox => {
+    checkBox.addEventListener('click', () => {
+        checkBox.parentNode.classList.toggle("checked");
+
+        checkBox.parentNode.classList.contains("checked") ?
+            checkBox.src = "../assets/checkbox.svg" :
+            checkBox.src = "../assets/box.svg";
+    });
+});

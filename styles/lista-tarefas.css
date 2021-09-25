@@ -121,13 +121,20 @@ a {
 .tasks i {
     grid-area: trash;
     justify-self: flex-end;
-    z-index: 50;
+    color: rgb(252, 112, 112);
+}
+.tasks i:hover {
+    color: rgb(255, 72, 72); 
+    transform: scale(1.1);
+    transition: color ease-in .3s, transform ease-in .3s;
 }
 
 .tasks img {
     grid-area: box;
-    width: 1.4rem;
+    width: 1.4rem;    
+    
 }
+
 
 .tasks h5 {
     grid-area: title;
@@ -141,4 +148,22 @@ a {
 .tasks .acc {
     grid-area: acc;
     display: none;
+}
+
+
+/* Tasks Style When Checked ---------------------------------------------------------- */
+.tasks.checked {
+    opacity: 0.3;
+    background-color: lightgray;
+    transition: opacity 0.7s ease-in, background-color 0.7s ease-in;     
+}
+
+.tasks.checked img {
+    width: 1.4rem; 
+}
+
+
+
+.tasks.checked h5 {
+    text-decoration: line-through;
 }
