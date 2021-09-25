@@ -39,6 +39,12 @@ export function checkoutTasks() {
         checkBox.parentNode.classList.contains("checked") ?
         checkBox.src = "../assets/checkbox.svg" :
         checkBox.src = "../assets/box.svg";
+
+        if (checkBox.parentNode.classList.contains("active")) {
+            ((checkBox.parentElement).lastElementChild).style.display = "none";
+            ((checkBox.parentNode).classList.toggle("active"));
+        }
+
         setTimeout( () => {
             organizeTasks(checkBox)
         }, 600);  
