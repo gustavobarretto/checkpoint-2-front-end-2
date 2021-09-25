@@ -14,27 +14,63 @@
 })
 
 */
+import { checkoutTasks } from "./accordion.js";
 fetch("https://jsonplaceholder.typicode.com/todos/")
 .then(response => response.json())
 .then(data => {
      const markup = data.map(el => {
-         return `
-            <li class="tarefa">
-                <div class="not-done"></div>
-                <div class="descripcion">
-                    <p class="nome">${el.title}</p>
-                    <p class="timestamp">${el.id}</p>
-                </div>
-            </li>
-
+        const form = document.forms.formtask;
+        const { task, date, description, submit } = form;
+        const titleTask = task.value;
+        const dateTask = date.value;
+        const descriptionTask = description.value;
+        const main = document.querySelector("main")
+        const section = document.createElement("section")
+         if (!el.completed){
+             section.setAttribute("class", "tasks");
+             main.appendChild(section)
+             section.innerHTML += `
+                 <img src="./assets/box.svg" alt="">
+                 <h5>${el.title}</h5>
+                 <i class="far fa-trash-alt"></i>
+                 <p class="date">${el.id}</p>
+                 <p class="acc">${el.title}</p>
+              
+              
+              `
+         } else {
+             section.className = "tasks checked active";
+             main.appendChild(section)
+             section.innerHTML += `
+                 <img src="./assets/checkbox.svg" alt="">
+                 <h5>${el.title}</h5>
+                 <i class="far fa-trash-alt"></i>
+                 <p class="date">${el.id}</p>
+                 <p class="acc">${el.title}</p>
+              
+              
+              `
+            
+        }
+        //section.setAttribute("class", "tasks");
+       
          
-         
-         `
     })
-    console.log(markup)
-    document.querySelector('.tarefas-pendentes').innerHTML = markup.join('')
+    const organizeTasks = (checkBox1) => {
+        if(checkBox1.parentNode.classList.contains("checked")) {
+            ((checkBox1.parentElement).parentElement) // get the Main
+            .insertAdjacentElement('beforeend', checkBox1.parentElement)
+    
+        } else {
+            ((checkBox1.parentElement).parentElement).children[1] // get the firstChild of the Main
+            .insertAdjacentElement('afterend', checkBox1.parentElement)
+        };
+    }
+    checkoutTasks();
+    const checkBox = document.querySelectorAll(".tasks img")
+    checkBox.forEach(checkBox => {
+        organizeTasks(checkBox);
+    })
+
+    
 })
-
-
-    //const markup = json.map();
-    //console.log(markup);
