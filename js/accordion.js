@@ -47,6 +47,7 @@ checkBox.forEach(checkBox => {
                 main.insertBefore(task, undefined)
             } 
         })
-        // Onde termina meu acréscimo   
+        // Onde termina meu acréscimo
+        // Documentação https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore   
     });
 });
