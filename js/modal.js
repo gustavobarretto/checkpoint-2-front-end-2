@@ -1,4 +1,8 @@
 import { checkoutTasks } from "./accordion.js";
+
+// Criar um import das validações
+
+
 // Evento para criação do modal no HTML5.
 
 // Função para abrir o modal
@@ -25,15 +29,18 @@ window.addEventListener("click", event => {
     }  
 })
 
-// Inserindo tarefa do modal
+// Inserindo tarefa preenchido no modal
 const form = document.forms.formtask;
 const { task, date, description, submit } = form;
 
-submit.addEventListener("click", (event) => {
+form.addEventListener("submit", (event) => {
     event.preventDefault()
-    const titleTask = task.value;
-    const dateTask = date.value;
-    const descriptionTask = description.value;
+    const titleTask = task.value; // Título da tarefa
+    const dateTask = date.value; // Data fatal da tarefa
+    const descriptionTask = description.value; // Descrição da tarefa
+
+    // textAreaValidation(descriptionTask);
+
     const main = document.querySelector("main")
     const section = document.createElement("section")
     section.setAttribute("class", "tasks");
@@ -50,6 +57,9 @@ submit.addEventListener("click", (event) => {
     form.reset();
 
     checkoutTasks();
+
+    
+
 
 })
 

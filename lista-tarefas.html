@@ -24,7 +24,7 @@
         </header>
         <main>
             <!-- Botão que abre o modal -->
-            <form class="nova-tarefa">
+            <form class="nova-tarefa" action="">
                 <button class="addTarefa">
                     <img src="./assets/addBtn.svg" alt="Adicionar Tarefa">
                 </button>
@@ -33,16 +33,16 @@
 
             <!-- Modal onde se adiciona a tarefa -->
             <div id="modal">
-                <form name="formtask">
+                <form name="formtask" action="">
                     <div class="modal-header">
                         <i class="fas fa-times fa-lg"></i>
                     </div>
                     <label for="">Tarefa</label>
-                    <input type="text" placeholder="Digite sua tarefa" name="task">
+                    <input required type="text" placeholder="Digite sua tarefa" name="task"/>
                     <label for="">Data de Entrega</label>
-                    <input type="date" name="date">
+                    <input required type="date" name="date"/>
                     <label for="">Descrição da Tarefa</label>
-                    <textarea type="text" placeholder="Descreva sua tarefa" name="description"></textarea>
+                    <textarea required type="text" placeholder="Descreva sua tarefa" name="description"></textarea>
                     <div class=buttons-modal>
                         <button type="reset">Limpar</button>
                         <button type="submit" name="submit">Salvar</button>
@@ -56,8 +56,6 @@
         </main>
 
         <script src="./js/modal.js" type="module"></script>
-        <script src="./js/accordion.js" type="module"></script>
-        <script></script>
 
     </body>
 
