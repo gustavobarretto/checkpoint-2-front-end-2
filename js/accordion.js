@@ -31,8 +31,6 @@ tasks.forEach(tasks => {
 const checkBox = document.querySelectorAll(".tasks img");
 
 checkBox.forEach(checkBox => {
-    let taskChecked;
-    console.log(checkBox)
     checkBox.addEventListener('click', () => {
         checkBox.parentNode.classList.toggle("checked");
         
