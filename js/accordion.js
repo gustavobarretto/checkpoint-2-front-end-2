@@ -6,9 +6,9 @@ export function checkoutTasks() {
     tasks.forEach(tasks => {
         tasks.addEventListener("click", () => {
             tasks.classList.toggle("active");
-            let panel = tasks.lastElementChild;
+            const panel = tasks.lastElementChild;
             const trashBin = tasks.childNodes[5];
-    
+            
             if (trashBin.classList.contains("active") || tasks.classList.contains("checked")) {
                 trashBin.classList.toggle("active");
                 tasks.classList.toggle("active");

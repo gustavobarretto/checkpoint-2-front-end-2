@@ -156,7 +156,6 @@ a {
     display: none;
 }
 
-
 /* Tasks Style When Checked ---------------------------------------------------------- */
 .tasks.checked {
     opacity: 0.3;
