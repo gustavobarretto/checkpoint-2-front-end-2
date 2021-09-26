@@ -31,7 +31,7 @@ window.addEventListener("click", event => {
 
 // Inserindo tarefa preenchido no modal
 const form = document.forms.formtask;
-const { task, date, description, submit } = form;
+const { task, date, description } = form;
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -61,6 +61,30 @@ form.addEventListener("submit", (event) => {
 });
 
 
+let labels = document.querySelectorAll('label');
+const [taskLabel, dateLabel, descriptionLabel] = labels;
+
+//Function for create a today's date
+/* const formatYmd = date => date.toISOString().slice(0, 10).split("-").reverse().join("/"); */
+
+const inputedDate = date => {
+    const [day, month, year] = date.split("/");
+    const ValidDate = new Date(`${year}-${month}-${day}`).getTime();
+
+    return ValidDate;
+};
+
+const dateNow = new Date().getTime();
+console.log(dateNow);
+
+const toTime = date => {
+    let hours = Math.floor(totalSeconds / 3600);
+    let totalSeconds = 3600;
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+};
+
+
 let checkValidationTask = false;
 let checkValidationDescription = false;
 let checkValidationDate = false;
@@ -71,45 +95,23 @@ let checkValidationDate = false;
 task.addEventListener('input', (e) => {
     if (/(?=(?:.*[a-zA-Z]){10,100})/.test(e.target.value)) {
         task.style.border = '2px solid lightgreen';
-        task.createElement('p').insertAdjacentElement('afterend', task);
-
-
+        taskLabel.innerHTML = `Tarefa`;
+        taskLabel.style.color = "#000";
         checkValidationTask = true;
 
     } else {
         task.style.border = '2px solid lightsalmon';
+        taskLabel.innerHTML = `Sua tarefa tem que ter pelo menos 10 caracteres`;
+        taskLabel.style.color = "lightsalmon";
         checkValidationTask = false;
     }
 });
 
 
-task.addEventListener('focusout', (e) => {
-    task.style.border === '2px solid lightsalmon' ?
-        task.focus() :
-        task.style.border = 'none';
+task.addEventListener('focusout', () => {
+    task.style.border = 'none';
 });
 
-
-let errorMessage = document.createElement('p');
-
-
-//Validation for the Description Input
-description.addEventListener('input', (e) => {
-    if (/^[a-z0-9_.-\s]{10,1000}$/.test(e.target.value)) {
-        description.style.border = '2px solid lightgreen';
-        checkValidationDescription = true;
-
-    } else {
-        description.style.border = '2px solid lightsalmon';
-        checkValidationDescription = false;
-    }
-});
-
-description.addEventListener('focusout', (e) => {
-    task.style.border === '2px solid lightsalmon' ?
-        task.focus() :
-        task.style.border = 'none';
-});
 
 
 function dateMask(value) {
@@ -125,16 +127,22 @@ function checkDate(dateValue) {
 
     if (dateRegex.test(dateValue)) {
         date.style.border = '2px solid lightgreen';
+        dateLabel.innerHTML = `Data de Entrega`;
+        dateLabel.style.color = "#000";
         checkValidationDate = false;
     }
     else {
-        errorMessage.innerHTML = "Digite uma data válida";
-        form.appendChild(errorMessage);
-        errorMessage.insertAdjacentElement('beforEnd', date);
-        errorMessage.style.cssText = "color: red;";
+        dateLabel.innerHTML = `Digite uma data válida!`;
+        dateLabel.style.color = "lightsalmon";
         date.style.border = '2px solid lightsalmon';
 
-        return true;
+    }
+
+
+    if (inputedDate(dateValue) < dateNow) {
+        dateLabel.innerHTML = `Digite uma data no futuro`;
+        dateLabel.style.color = "lightsalmon";
+        date.style.border = '2px solid lightsalmon';
     }
 }
 
@@ -142,6 +150,29 @@ function checkDate(dateValue) {
 date.addEventListener('input', e => {
     e.target.value = dateMask(e.target.value);
     checkDate(e.target.value);
+});
+date.addEventListener('focusout', () => {
+    date.style.border = 'none';
+});
+
+//Validation for the Description Input
+description.addEventListener('input', (e) => {
+    if (/(?=(?:.*[a-zA-Z]){10,1000})/.test(e.target.value)) {
+        description.style.border = '2px solid lightgreen';
+        descriptionLabel.innerHTML = `Descrição da Tarefa`;
+        descriptionLabel.style.color = "#000";
+        checkValidationDescription = true;
+
+    } else {
+        description.style.border = '2px solid lightsalmon';
+        descriptionLabel.innerHTML = `A descrição tem que ter pelo menos 10 caracteres`;
+        descriptionLabel.style.color = "lightsalmon";
+        checkValidationDescription = false;
+    }
+});
+
+description.addEventListener('focusout', () => {
+    task.style.border = 'none';
 });
 
 
