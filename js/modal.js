@@ -1,4 +1,6 @@
-import { checkoutTasks } from "./accordion.js";
+import { tasksFunctions } from "./accordion.js";
+import { checkTasks } from "./checkTasks.js";
+import { organizeTasks } from "./organizeTasks.js";
 import { checkValidationTask, checkValidationDate, checkValidationDescription } from "./validations.js";
 
 // Criar um import das validações
@@ -40,26 +42,37 @@ form.addEventListener("submit", (event) => {
     const dateTask = date.value; // Data fatal da tarefa
     const descriptionTask = description.value; // Descrição da tarefa
 
-    if (checkValidationTask, checkValidationDate, checkValidationDescription) {
+    if (checkValidationTask && checkValidationDate && checkValidationDescription) {
         // textAreaValidation(descriptionTask);
+
         const main = document.querySelector("main");
         const section = document.createElement("section");
         section.setAttribute("class", "tasks");
         main.appendChild(section);
         section.innerHTML += `
-            <img src="./assets/box.svg" alt="">
-            <h5>${titleTask}</h5>
-            <i class="far fa-trash-alt"></i>
-            <p class="date">${dateTask}</p>
-            <p class="acc">${descriptionTask}</p>
-    `;
+        <img src="./assets/box.svg" alt="">
+        <h5>${titleTask}</h5>
+        <i class="far fa-trash-alt"></i>
+        <p class="date">${dateTask}</p>
+        <p class="acc">${descriptionTask}</p>
+`;
         modal.style.display = "none";
+
         form.reset();
-        checkoutTasks();
-    } else {
-        alert("Preencha todos os campos corretamente!");
+
+        organizeTasks();
+
+        checkTasks();
+
+        tasksFunctions();
     }
+    else {
+        alert("Preencha todos os campos corretamente.");
+    }
+
 });
+
+
 
 
 

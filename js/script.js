@@ -14,7 +14,23 @@
 })
 
 */
-import { checkoutTasks } from "./accordion.js";
+import { tasksFunctions } from "./accordion.js";
+import { checkTasks } from "./checkTasks.js";
+import { organizeTasks } from "./organizeTasks.js";
+
+const checkAndChecked = (title, id, img, date) => {
+
+    return  `
+                 <img src="./assets/${img}.svg" alt="">
+                 <h5>Id: ${id} - ${title}</h5>
+                 <i class="far fa-trash-alt"></i>
+                 <p class="date">${date}</p>
+                 <p class="acc">${title}</p>  
+            `
+
+}
+
+
 fetch("https://jsonplaceholder.typicode.com/todos/")
 .then(response => response.json())
 .then(data => {
@@ -29,48 +45,18 @@ fetch("https://jsonplaceholder.typicode.com/todos/")
          if (!el.completed){
              section.setAttribute("class", "tasks");
              main.appendChild(section)
-             section.innerHTML += `
-                 <img src="./assets/box.svg" alt="">
-                 <h5>${el.title}</h5>
-                 <i class="far fa-trash-alt"></i>
-                 <p class="date">${el.id}</p>
-                 <p class="acc">${el.title}</p>
-              
-              
-              `
+             section.innerHTML += checkAndChecked(el.title, el.id, "box")
+
          } else {
              section.className = "tasks checked active";
              main.appendChild(section)
-             section.innerHTML += `
-                 <img src="./assets/checkbox.svg" alt="">
-                 <h5>${el.title}</h5>
-                 <i class="far fa-trash-alt"></i>
-                 <p class="date">${el.id}</p>
-                 <p class="acc">${el.title}</p>
-              
-              
-              `
+             section.innerHTML += checkAndChecked(el.title, el.id, "checkbox")
             
-        }
-        //section.setAttribute("class", "tasks");
-       
+        } 
          
     })
-    const organizeTasks = (checkBox1) => {
-        if(checkBox1.parentNode.classList.contains("checked")) {
-            ((checkBox1.parentElement).parentElement) // get the Main
-            .insertAdjacentElement('beforeend', checkBox1.parentElement)
-    
-        } else {
-            ((checkBox1.parentElement).parentElement).children[1] // get the firstChild of the Main
-            .insertAdjacentElement('afterend', checkBox1.parentElement)
-        };
-    }
-    checkoutTasks();
-    const checkBox = document.querySelectorAll(".tasks img")
-    checkBox.forEach(checkBox => {
-        organizeTasks(checkBox);
-    })
 
-    
+    tasksFunctions();
+    organizeTasks();
+    checkTasks();
 })

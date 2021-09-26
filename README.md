@@ -12,7 +12,7 @@
 
 2. Validações:
 	- <s>Nenhum campo pode ser vazio.</s>
-	- A descrição deve ter mais que 10 caracteres.
+	- <s>A descrição deve ter mais que 10 caracteres.</s>
 	- <s>**IMPORTANTE**: Quando o usuário não preencher corretamente deve ser exibido um alerta indicando que existem erros na criação da tarefa.</s>
 	- **OPCIONAL**: a data limite da tarefa deve ser hoje ou no futuro.
 
@@ -25,6 +25,6 @@
 
 4. Agora nós vamos criar uma outra página, onde iremos consumir uma api de lista de tarefas.
 	- <s>O end-point https://jsonplaceholder.typicode.com/todos/ responde com um JSON com 200 tarefas. Essas 200 tarefas devem ser consumidas pelo JS e renderizadas também como cards na página.</s>
-	- <s>Nas tarefas onde o atributo “completed": true” o texto do atributo title deve estar tachado. Pois significa que a tarefa ja foi completada.</s>
-Nas tarefas onde o atributo “completed": false” o texto do atributo title deve estar em negrito. Pois significa que a tarefa está a fazer. 
-	- <s>Exiba também o conteúdo do atributo “id”.</s>
+	- <s>Nas tarefas onde o atributo “completed": "true” o texto do atributo title deve estar tachado. Pois significa que a tarefa ja foi completada.</s>
+	- <s>Nas tarefas onde o atributo “completed": "false” o texto do atributo title deve estar em negrito. Pois significa que a tarefa está a fazer.</s>
+	- <s>Exiba também o conteúdo do atributo "Id".</s>
