@@ -38,17 +38,16 @@
                         <i class="fas fa-times fa-lg"></i>
                     </div>
                     <label for="task">Tarefa</label>
-                    <input class="invalid" required type="text"
+                    <input class="invalid" type="text"
                         placeholder="Digite sua tarefa" name="task"
                         autocomplete="off" />
                     <label for="date">Data de Entrega</label>
-                    <input id="date" required type="text" name="date"
+                    <input id="date" type="text" name="date"
                         placeholder="Digite uma data" autocomplete="off" />
                     <label for="description">Descrição
                         da Tarefa</label>
-                    <textarea required type="text"
-                        placeholder="Descreva sua tarefa" name="description"
-                        autocomplete="off"></textarea>
+                    <textarea type="text" placeholder="Descreva sua tarefa"
+                        name="description" autocomplete="off"></textarea>
                     <div class=buttons-modal>
                         <button type="reset">Limpar</button>
                         <button type="submit" name="submit">Salvar</button>
@@ -62,6 +61,7 @@
         </main>
 
         <script src="./js/modal.js" type="module"></script>
+        <script src="./js/validations.js" type=module></script>
         <script src="js/script.js" type="module"></script>
 
     </body>
