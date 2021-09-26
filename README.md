@@ -14,7 +14,7 @@
 	- <s>Nenhum campo pode ser vazio.</s>
 	- <s>A descrição deve ter mais que 10 caracteres.</s>
 	- <s>**IMPORTANTE**: Quando o usuário não preencher corretamente deve ser exibido um alerta indicando que existem erros na criação da tarefa.</s>
-	- **OPCIONAL**: a data limite da tarefa deve ser hoje ou no futuro.
+	- <s>**OPCIONAL**: a data limite da tarefa deve ser hoje ou no futuro.</s>
 
 
 3. Funcionalidades:
