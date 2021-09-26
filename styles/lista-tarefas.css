@@ -1,6 +1,5 @@
 @import url('./common.css');
 @import url('./modal.css');
-@import url('./accordion.css');
 
 header {
     display: flex;
