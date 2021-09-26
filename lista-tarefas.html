@@ -39,13 +39,15 @@
                     </div>
                     <label for="">Tarefa</label>
                     <input class="invalid" required type="text"
-                        placeholder="Digite sua tarefa" name="task" />
+                        placeholder="Digite sua tarefa" name="task"
+                        autocomplete="off" />
                     <label for="">Data de Entrega</label>
-                    <input required type="date" name="date" />
+                    <input id="date" required type="text" name="date"
+                        placeholder="Digite uma data" autocomplete="off" />
                     <label for="">Descrição da Tarefa</label>
                     <textarea required type="text"
-                        placeholder="Descreva sua tarefa"
-                        name="description"></textarea>
+                        placeholder="Descreva sua tarefa" name="description"
+                        autocomplete="off"></textarea>
                     <div class=buttons-modal>
                         <button type="reset">Limpar</button>
                         <button type="submit" name="submit">Salvar</button>

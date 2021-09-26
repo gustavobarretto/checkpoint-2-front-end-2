@@ -61,13 +61,24 @@ form.addEventListener("submit", (event) => {
 });
 
 
+let checkValidationTask = false;
+let checkValidationDescription = false;
+let checkValidationDate = false;
+
+
 //Validation for the Task Input
 
 task.addEventListener('input', (e) => {
-    if (/^\w{10,100}$/.test(e.target.value)) {
+    if (/(?=(?:.*[a-zA-Z]){10,100})/.test(e.target.value)) {
         task.style.border = '2px solid lightgreen';
+        task.createElement('p').insertAdjacentElement('afterend', task);
+
+
+        checkValidationTask = true;
+
     } else {
         task.style.border = '2px solid lightsalmon';
+        checkValidationTask = false;
     }
 });
 
@@ -79,13 +90,18 @@ task.addEventListener('focusout', (e) => {
 });
 
 
+let errorMessage = document.createElement('p');
+
 
 //Validation for the Description Input
 description.addEventListener('input', (e) => {
-    if (/^\w{10,1000}$/.test(e.target.value)) {
+    if (/^[a-z0-9_.-\s]{10,1000}$/.test(e.target.value)) {
         description.style.border = '2px solid lightgreen';
+        checkValidationDescription = true;
+
     } else {
         description.style.border = '2px solid lightsalmon';
+        checkValidationDescription = false;
     }
 });
 
@@ -96,15 +112,39 @@ description.addEventListener('focusout', (e) => {
 });
 
 
+function dateMask(value) {
+    return value
+        .replace(/\D+/g, '')
+        .replace(/(\d{2})(\d)/, '$1/$2')
+        .replace(/(\/\d{2})(\d)/, '$1/$2')
+        .replace(/(\/\d{4})\d+?$/, '$1');
+}
 
-/*
-let data = new Date();
+function checkDate(dateValue) {
+    let dateRegex = /^(((0[1-9]|[12][0-9]|3[01])([-.\/])(0[13578]|10|12)([-.\/])(\d{4}))|(([0][1-9]|[12][0-9]|30)([-.\/])(0[469]|11)([-.\/])(\d{4}))|((0[1-9]|1[0-9]|2[0-8])([-.\/])(02)([-.\/])(\d{4}))|((29)(\.|-|\/)(02)([-.\/])([02468][048]00))|((29)([-.\/])(02)([-.\/])([13579][26]00))|((29)([-.\/])(02)([-.\/])([0-9][0-9][0][48]))|((29)([-.\/])(02)([-.\/])([0-9][0-9][2468][048]))|((29)([-.\/])(02)([-.\/])([0-9][0-9][13579][26])))$/;
 
-console.log(data.getDate());
-console.log(data.getMonth());
-console.log(data.getFullYear());
+    if (dateRegex.test(dateValue)) {
+        date.style.border = '2px solid lightgreen';
+        checkValidationDate = false;
+    }
+    else {
+        errorMessage.innerHTML = "Digite uma data válida";
+        form.appendChild(errorMessage);
+        errorMessage.insertAdjacentElement('beforEnd', date);
+        errorMessage.style.cssText = "color: red;";
+        date.style.border = '2px solid lightsalmon';
 
-console.log(`${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`); */
+        return true;
+    }
+}
+
+
+date.addEventListener('input', e => {
+    e.target.value = dateMask(e.target.value);
+    checkDate(e.target.value);
+});
+
+
 
 
 
