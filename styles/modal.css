@@ -41,17 +41,16 @@
 }
 
 #modal input, textarea {
-    outline-style: none;
     border: none;
+    outline: none;
+    padding: 0 0.5rem;
+}
+textarea {
+    padding-top: 0.5rem;
 }
 
-/* focus input and textarea */
 
-#modal input:focus, textarea:focus {
-    border-bottom: 0.5px solid var(--secondary);
-    
-    transform-origin: bottom solid 1px var(--secondary) 
-}
+
 
 #modal .modal-header i {
     float: right;
@@ -66,14 +65,24 @@
     color: rgb(95, 95, 95);
     border-radius: 50%;
     padding: 1rem;
-
 }
-
 
 #modal input {
     height: 2rem;
 
 }
+
+input:required:valid , textarea:required:valid  {
+    border-color: lightgreen;
+  }
+/* 
+  input:required:focus:valid, textarea:required:focus:valid{
+   background:lightgreen;
+
+  }
+  input:focus:invalid, textarea:focus:invalid{
+    background: lightsalmon;
+} */
 
 
 #modal textarea {
