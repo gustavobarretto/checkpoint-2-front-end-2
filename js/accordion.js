@@ -1,8 +1,8 @@
-export function checkoutTasks() {
+export function tasksFunctions() {
 
-    const tasks = document.querySelectorAll(".tasks");
     
     // Showing the accordion
+    const tasks = document.querySelectorAll(".tasks");
     tasks.forEach(tasks => {
         tasks.addEventListener("click", () => {
             tasks.classList.toggle("active");
@@ -20,45 +20,14 @@ export function checkoutTasks() {
         });
     });
     
-    // Delete task
+    // Deleting task function
     tasks.forEach(tasks => {
         const trashBin = tasks.childNodes[5];
         trashBin.addEventListener("click", () => {
             trashBin.classList.toggle("active");
-            const deleteTask = confirm("Deseja realmente deletar?");
+            const deleteTask = confirm("Deseja realmente deletar esta tarefa?");
             deleteTask ? tasks.remove() : "";
         });
     });
-    
-    // Checkbox function
-    const checkBox = document.querySelectorAll(".tasks img");
-    
-    checkBox.forEach(checkBox => {
-        checkBox.addEventListener('click', () => {
-        checkBox.parentNode.classList.toggle("checked");
-        checkBox.parentNode.classList.contains("checked") ?
-        checkBox.src = "../assets/checkbox.svg" :
-        checkBox.src = "../assets/box.svg";
-
-        if (checkBox.parentNode.classList.contains("active")) {
-            ((checkBox.parentElement).lastElementChild).style.display = "none";
-            ((checkBox.parentNode).classList.toggle("active"));
-        }
-
-        setTimeout( () => {
-            organizeTasks(checkBox)
-        }, 600);  
-    })});
-    
-    const organizeTasks = (checkBox) => {
-        if(checkBox.parentNode.classList.contains("checked")) {
-            ((checkBox.parentElement).parentElement) // get the Main
-            .insertAdjacentElement('beforeend', checkBox.parentElement)
-    
-        } else {
-            ((checkBox.parentElement).parentElement).children[1] // get the firstChild of the Main
-            .insertAdjacentElement('afterend', checkBox.parentElement)
-        };
-    }
 }
 

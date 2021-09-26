@@ -1,4 +1,6 @@
-import { checkoutTasks } from "./accordion.js";
+import { tasksFunctions } from "./accordion.js";
+import { checkTasks } from "./checkTasks.js";
+import { organizeTasks } from "./organizeTasks.js";
 
 // Criar um import das validações
 
@@ -39,7 +41,6 @@ form.addEventListener("submit", (event) => {
     const dateTask = date.value; // Data fatal da tarefa
     const descriptionTask = description.value; // Descrição da tarefa
 
-    validationTitle(task, date, description);
     // textAreaValidation(descriptionTask);
 
     const main = document.querySelector("main");
@@ -56,15 +57,18 @@ form.addEventListener("submit", (event) => {
     modal.style.display = "none";
 
     form.reset();
+    
+    organizeTasks();
+    
+    checkTasks();
 
-    checkoutTasks();
+    tasksFunctions();
 });
-
 
 //Validation for the Task Input
 
 task.addEventListener('input', (e) => {
-    if (/^\w{10,100}$/.test(e.target.value)) {
+    if (/(?=(?:.*[a-zA-Z]){10,100})/.test(e.target.value)) {
         task.style.border = '2px solid lightgreen';
     } else {
         task.style.border = '2px solid lightsalmon';
@@ -73,8 +77,8 @@ task.addEventListener('input', (e) => {
 
 
 task.addEventListener('focusout', (e) => {
-    task.style.border === '2px solid lightsalmon' ?
-        task.focus() :
+    // task.style.border === '2px solid lightsalmon' ?
+        // task.focus() :
         task.style.border = 'none';
 });
 
@@ -82,7 +86,7 @@ task.addEventListener('focusout', (e) => {
 
 //Validation for the Description Input
 description.addEventListener('input', (e) => {
-    if (/^\w{10,1000}$/.test(e.target.value)) {
+    if (/(?=(?:.*[a-zA-Z]){10,1000})/.test(e.target.value)) {
         description.style.border = '2px solid lightgreen';
     } else {
         description.style.border = '2px solid lightsalmon';
@@ -94,8 +98,6 @@ description.addEventListener('focusout', (e) => {
         task.focus() :
         task.style.border = 'none';
 });
-
-
 
 /*
 let data = new Date();
