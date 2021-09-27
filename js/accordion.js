@@ -1,5 +1,4 @@
 export function tasksFunctions() {
-
     
     // Showing accordion's function
     const tasks = document.querySelectorAll(".tasks");

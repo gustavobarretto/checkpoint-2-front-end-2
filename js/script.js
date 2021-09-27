@@ -18,7 +18,10 @@ import { tasksFunctions } from "./accordion.js";
 import { checkTasks } from "./checkTasks.js";
 import { organizeTasks } from "./organizeTasks.js";
 
-
+const userName = JSON.parse(localStorage.getItem("user"));
+const welcomeName = document.querySelector("p")
+welcomeName.innerHTML = userName;
+        
 
 const checkAndChecked = (title, id, img, date) => {
 
@@ -37,16 +40,10 @@ const checkAndChecked = (title, id, img, date) => {
 
 }
 
-
 fetch("https://jsonplaceholder.typicode.com/todos/")
 .then(response => response.json())
 .then(data => {
      const markup = data.map(el => {
-        const form = document.forms.formtask;
-        const { task, date, description, submit } = form;
-        const titleTask = task.value;
-        const dateTask = date.value;
-        const descriptionTask = description.value;
         const main = document.querySelector("main")
         const section = document.createElement("section")
          if (!el.completed){
@@ -59,11 +56,10 @@ fetch("https://jsonplaceholder.typicode.com/todos/")
              main.appendChild(section)
              section.innerHTML += checkAndChecked(el.title, el.id, "checkbox")
             
-        } 
-         
+        }
+        
     })
-
+    organizeTasks(); 
     tasksFunctions();
-    organizeTasks();
     checkTasks();
 })

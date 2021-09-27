@@ -1,42 +1,42 @@
 @import url('./common.css');
 
+body {
+  width: 100vw;
+  height: 100vh;
+
+}
+
 h1 {
   color: rgb(116, 116, 116);
   font-weight: 300;
-  margin-top: 1em;
-  margin-bottom: 4em;
+  margin: 2rem 0;
 }
 
 form {
-  position: relative;
-  height: 100vh;
-  width: 30em;
+  width: 30vw;
+
+  margin: 10rem auto;
   background-color: white;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 0 calc(50% - 15em);
   box-shadow: 0 5px 5px lightgrey;
   padding: 2em 4em;
   box-sizing: border-box;
 }
 
-form:after {
-  position: absolute;
-  content: '';
-  width: .7em;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(var(--primary), var(--secondary));
+label {
+  width: 100%;
+  font-weight: 500;
+  margin: .8rem 0;
 }
 
-.image {
-  height: 9em;
-  width: 9em;
-  border-radius: 50%;
-  background-color: var(--app-grey);
-  margin-bottom: 2em;
+form input {
+  height: 2rem;
+  border: none;
+  outline: none;
+  padding: 0 0.5rem;
+
 }
 
 input {
@@ -45,27 +45,31 @@ input {
   background-color: var(--app-grey);
   border: 1px solid var(--app-grey);
   border-radius: .2em;
+  margin-top: 1rem;
 }
 
 input:focus {
   outline: none;
-  border: 1px solid lightgrey;
-}
-
-label {
-  width: 100%;
-  font-weight: 300;
-  margin-bottom: -.1em;
-  margin-top: 1.5em;
+  border-bottom: 1px solid var(--secondary);
 }
 
 button {
-  padding: .3em 2em;
-  background-color: var(--primary);
-  color: white;
-  margin-top: 5em;
-  font-weight: 400;
-  font-size: 1em;
+  padding: 0.5rem 3rem;
+  border-radius: 0.2rem;
+  font-weight: bold;
+  background-color: #587fff;
+  color: #FFF;
+  margin: 2rem 0;
+}
+
+button:hover {
+  background-color: #2d5eff;
+  transition: background-color .5s ease-in-out;
+
+}
+
+button:active {
+  background-color: #003cff;
 }
 
 .form-footer {

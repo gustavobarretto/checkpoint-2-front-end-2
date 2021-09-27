@@ -75,15 +75,6 @@ textarea {
 input:required:valid , textarea:required:valid  {
     border-color: lightgreen;
   }
-/* 
-  input:required:focus:valid, textarea:required:focus:valid{
-   background:lightgreen;
-
-  }
-  input:focus:invalid, textarea:focus:invalid{
-    background: lightsalmon;
-} */
-
 
 #modal textarea {
     resize: none;
@@ -133,7 +124,6 @@ input:required:valid , textarea:required:valid  {
 
 #modal form .buttons-modal button[type="submit"]:active {
     background-color: #003cff;
-    
     
 }
 

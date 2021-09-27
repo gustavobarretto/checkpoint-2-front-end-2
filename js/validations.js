@@ -1,5 +1,4 @@
-// REGex validations
-// Input's validations
+// REGex validations and input's validations
 
 let labels = document.querySelectorAll('label');
 const [taskLabel, dateLabel, descriptionLabel] = labels;
@@ -20,9 +19,8 @@ const inputedDate = date => {
 
 
 //Validation for the Task Input
-
 task.addEventListener('input', (e) => {
-    if (/(?=(?:.*[a-zA-Z]){10,100})/.test(e.target.value)) {
+    if (/(?=(?:.*[a-zA-Z]){3,100})/.test(e.target.value)) {
         task.style.border = '2px solid lightgreen';
         taskLabel.innerHTML = `Tarefa`;
         taskLabel.style.color = "#000";
@@ -30,7 +28,7 @@ task.addEventListener('input', (e) => {
 
     } else {
         task.style.border = '2px solid lightsalmon';
-        taskLabel.innerHTML = `Sua tarefa tem que ter pelo menos 10 caracteres`;
+        taskLabel.innerHTML = `Sua tarefa tem que ter pelo menos 3 letras`;
         taskLabel.style.color = "lightsalmon";
         checkValidationTask = false;
     }

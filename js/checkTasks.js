@@ -1,5 +1,4 @@
-// This module check all conclued or unchecked the tasks 
-// and all information inside the tasks.
+// This module verify all checked or unchecked tasks and all information inside the tasks.
 import { organizeTasks } from './organizeTasks.js';
 
 export const checkTasks = () => {
@@ -18,5 +17,6 @@ export const checkTasks = () => {
 
         setTimeout( () => {
             organizeTasks();
-    }, 600);  
+        }, 600)
+     
     })})};

@@ -11,34 +11,26 @@
 
 <body>
 
-    <form>
-        <h1>Cadastro de conta</h1>
+    <form name='login' action="/lista-tarefas.html" method="GET">
+        <h1>Fazer login</h1>
 
         <div class="image"></div>
 
         <label>
-      Nome:
-      <input type="text">
+      Usuário:
+      <input required name='username' type="text">
     </label>
         <label>
       Senha:
-      <input type="password">
+      <input required type="password">
     </label>
-        <label>
-      Repetir senha:
-      <input type="password">
-    </label>
-        <label>
-      E-mail:
-      <input type="text">
-    </label>
-
-        <button>Criar Conta</button>
+    <button>Entrar</button>
 
         <div class="form-footer">
             <p>ToDo</p>
         </div>
     </form>
+    <script src="./js/login.js"></script>
 
 </body>
 

@@ -12,5 +12,5 @@ export const organizeTasks = () => {
             ((tasks.parentElement).parentElement).children[1] // get the firstChild of the Main
             .insertAdjacentElement('afterend', tasks.parentElement)
         };
-    })
+    })    
 }
