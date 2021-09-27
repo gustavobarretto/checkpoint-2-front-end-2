@@ -44,14 +44,17 @@ form.addEventListener("submit", (event) => {
 
         const main = document.querySelector("main");
         const section = document.createElement("section");
+        const newDate = new Date();
+        const creationDate = ((newDate.getDate() )) + "/" + ((newDate.getMonth() + 1)) + "/" + newDate.getFullYear(); 
         section.setAttribute("class", "tasks");
         main.appendChild(section);
         section.innerHTML += `
         <img src="./assets/box.svg" alt="">
         <h5>${titleTask}</h5>
         <i class="far fa-trash-alt"></i>
-        <p class="date">${dateTask}</p>
+        <p class="date">Data de Conclusão: ${dateTask}</p>
         <p class="acc">${descriptionTask}</p>
+        <p class="creationDate">Data de criação: ${creationDate}</p> 
 `;
         modal.style.display = "none";
 

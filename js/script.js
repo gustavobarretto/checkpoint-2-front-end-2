@@ -18,14 +18,21 @@ import { tasksFunctions } from "./accordion.js";
 import { checkTasks } from "./checkTasks.js";
 import { organizeTasks } from "./organizeTasks.js";
 
+
+
 const checkAndChecked = (title, id, img, date) => {
+
+    const newDate = new Date ();
+    const creationDate = ((newDate.getDate() )) + "/" + ((newDate.getMonth() + 1)) + "/" + newDate.getFullYear(); 
 
     return  `
                  <img src="./assets/${img}.svg" alt="">
                  <h5>Id: ${id} - ${title}</h5>
                  <i class="far fa-trash-alt"></i>
-                 <p class="date">${date}</p>
-                 <p class="acc">${title}</p>  
+                 <p class="date">Data de conclusão: ${creationDate}</p>
+                 <p class="acc">${title}</p>
+                 <p class="creationDate">Data de criação: ${creationDate}</p> 
+                
             `
 
 }

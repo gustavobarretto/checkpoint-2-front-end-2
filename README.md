@@ -5,7 +5,7 @@
 ### Instruções e requisitos do entregável	
 	
 1. A primeira página deve ter um formulário com os inputs:   
-	- Data de criação: o usuário não poderá alterar esse input, mas ele deve ser exibido.  
+	- <s>Data de criação: o usuário não poderá alterar esse input, mas ele deve ser exibido.</s>  
 	- <s>Data limite da tarefa: data que o usuário deseja terminar aquela tarefa.</s>  
 	- <s>Descrição: texto da tarefa.</s>  
 	- <s>Botão de submit.</s>  
@@ -28,3 +28,4 @@
 	- <s>Nas tarefas onde o atributo “completed": "true” o texto do atributo title deve estar tachado. Pois significa que a tarefa ja foi completada.</s>
 	- <s>Nas tarefas onde o atributo “completed": "false” o texto do atributo title deve estar em negrito. Pois significa que a tarefa está a fazer.</s>
 	- <s>Exiba também o conteúdo do atributo "Id".</s>
+

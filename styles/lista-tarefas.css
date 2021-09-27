@@ -104,7 +104,8 @@ a {
     grid-template-areas: 
         ". . trash"
         "box title date"
-        "acc acc acc";
+        "acc acc acc"
+        ". . creationDate";
     gap: 1rem .5rem;
 
     align-items: center;
@@ -140,7 +141,6 @@ a {
     
 }
 
-
 .tasks h5 {
     grid-area: title;
 }
@@ -153,6 +153,14 @@ a {
 .tasks .acc {
     grid-area: acc;
     display: none;
+}
+
+.tasks .creationDate {
+    grid-area: creationDate;
+    display: none;
+    color: gray;
+    justify-self: flex-end;
+    font-size: 12px;
 }
 
 /* Tasks Style When Checked ---------------------------------------------------------- */
