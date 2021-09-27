@@ -1,7 +1,7 @@
 export function tasksFunctions() {
 
     
-    // Showing the accordion
+    // Showing accordion's function
     const tasks = document.querySelectorAll(".tasks");
     tasks.forEach(tasks => {
         tasks.addEventListener("click", () => {
@@ -20,7 +20,7 @@ export function tasksFunctions() {
         });
     });
     
-    // Deleting task function
+    // Deleting task's function
     tasks.forEach(tasks => {
         const trashBin = tasks.childNodes[5];
         trashBin.addEventListener("click", () => {

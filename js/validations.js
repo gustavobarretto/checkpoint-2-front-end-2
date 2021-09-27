@@ -1,3 +1,6 @@
+// REGex validations
+// Input's validations
+
 let labels = document.querySelectorAll('label');
 const [taskLabel, dateLabel, descriptionLabel] = labels;
 const form = document.forms.formtask;

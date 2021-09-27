@@ -3,7 +3,7 @@
 
     O retorno do response será outra promise que passo para o data, que serão os dados do json. 
 
-    Caso eu peça para o fetch um objeto que não comtém ele irá retornar o erro 404 que trato da seguinte forma
+    Caso eu peça para o fetch um objeto que não contém ele irá retornar o erro 404 que trato da seguinte forma
     fetch("https://jsonplaceholder.typicode.com/todos/201")
     .then(response => {
     if (response.ok) {

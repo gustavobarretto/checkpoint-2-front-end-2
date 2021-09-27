@@ -3,12 +3,9 @@ import { checkTasks } from "./checkTasks.js";
 import { organizeTasks } from "./organizeTasks.js";
 import { checkValidationTask, checkValidationDate, checkValidationDescription } from "./validations.js";
 
-// Criar um import das validações
+// Event for the modal's creation inside to HTML5.
 
-
-// Evento para criação do modal no HTML5.
-
-// Função para abrir o modal
+// Opening modal's functions 
 const modal = document.getElementById("modal");
 const abrirModal = document.querySelector(".addTarefa");
 
@@ -20,7 +17,7 @@ abrirModal.addEventListener("click", event => {
     modal.style.display = "block";
 });
 
-// Função para fechar o modal
+// Closing modal's function
 const fecharModal = document.querySelector(".fas");
 fecharModal.addEventListener("click", () => {
     modal.style.display = "none";
@@ -32,15 +29,15 @@ window.addEventListener("click", event => {
     }
 });
 
-// Inserindo tarefa preenchido no modal
+// Inserting the new task on the to-do list
 const form = document.forms.formtask;
 const { task, date, description } = form;
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const titleTask = task.value; // Título da tarefa
-    const dateTask = date.value; // Data fatal da tarefa
-    const descriptionTask = description.value; // Descrição da tarefa
+    const titleTask = task.value; // Task's title
+    const dateTask = date.value; // Task's deadline
+    const descriptionTask = description.value; // Task's description
 
     if (checkValidationTask && checkValidationDate && checkValidationDescription) {
         // textAreaValidation(descriptionTask);
