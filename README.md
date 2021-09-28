@@ -2,7 +2,8 @@
 
 ## Integrantes
 	- [Eduardo de Araujo](https://github.com/eduardoaraujogomes)
-	- [Stefany Lovato](https://github.com/stefanylovato)
+	- [Eduardo de Araujo](https://github.com/eduardoaraujogomes);
+	- [Stefany Lovato](https://github.com/stefanylovato);
 	- [Gustavo Barretto](https://github.com/gustavobarretto)
 	- [Lucas Fidelis](https://github.com/fidelismaia)
 	- [Matheus Ferraioli]()
