@@ -16,8 +16,8 @@ import { checkValidationTask, checkValidationDate, checkValidationDescription } 
 
 */
 
-// Nome do login
-const userName = JSON.parse(localStorage.getItem("user"));
+// Login's name
+const userName = JSON.parse(localStorage.getItem("user")); // Get the name on localStorage
 const welcomeName = document.querySelector("p");
 welcomeName.innerHTML = userName;
 // ************************************
@@ -25,22 +25,24 @@ welcomeName.innerHTML = userName;
 const tasks = document.querySelectorAll(".tasks");
 const checkBox = document.querySelectorAll(".tasks img");
 
-// Organiza as tarefas
+// Organizing task's function
 const organizeTasks = (tasks) => {
     if (tasks.classList.contains("checked")) {
-        ((tasks).parentElement) // get the Main
+        ((tasks).parentElement) // get the Main HTML element
             .insertAdjacentElement('beforeend', tasks);
 
     } else {
-        ((tasks).parentElement).children[1] // get the firstChild of the Main
+        ((tasks).parentElement).children[1] // get the firstChild (HTML element) of the Main
             .insertAdjacentElement('afterend', tasks);
     };
 
 };
 
+
+// Function to add the HTML section for the API tasks.
 const checkAndChecked = (title, id, img) => {
 
-    const newDate = new Date();
+    const newDate = new Date(); // Get the creation's date of the task
     const creationDate = ((newDate.getDate())) + "/" + ((newDate.getMonth() + 1)) + "/" + newDate.getFullYear();
 
     return `
@@ -73,7 +75,7 @@ fetch("https://jsonplaceholder.typicode.com/todos/")
             }
             const checkBox = document.querySelectorAll(".tasks img");
             checkBox.forEach(checkBox => {
-                organizeTasks(checkBox.parentElement);
+                organizeTasks(checkBox.parentElement); // Checking and organize all checked and unchecked tasks
             });
 
         });
@@ -81,7 +83,7 @@ fetch("https://jsonplaceholder.typicode.com/todos/")
 
 // Showing accordion's function
 const accordion = (event) => {
-    console.log(event);
+
     if (!event.classList.contains("checked")) {
         event.classList.toggle("active");
         const acc = event.childNodes[9];
@@ -100,12 +102,12 @@ const accordion = (event) => {
 const trashBin = event => {
     event.classList.toggle("active");
     const deleteTask = confirm("Deseja realmente deletar esta tarefa?");
-    deleteTask ? event.parentElement.remove() : "";
+    deleteTask ? event.parentElement.remove() : ""; // Remove the HTML element's task
 };
 
 // Checkbox task's function
 const checkTasks = event => {
-    console.log(event.parentElement);
+
     if (event.parentElement.classList.contains("active")) {
         event.parentElement.childNodes[9].style.display = "none";
         event.parentElement.childNodes[11].style.display = "none";
@@ -149,8 +151,7 @@ window.addEventListener("click", event => {
     }
 });
 
-// Inserting the new task on the to-do list
-
+// Inserting the new task on the to-do list manually
 
 const form = document.forms.formtask;
 const { task, date, description } = form;
@@ -180,13 +181,9 @@ form.addEventListener("submit", (event) => {
         <p class="creationDate">Data de criação: ${creationDate}</p> 
 `;
         modal.style.display = "none";
+        form.reset(); // Reset the data in the form's task
 
-        form.reset();
-
-
-        organizeTasks(section);
-
-
+        organizeTasks(section); // Organize the new task on the panel's tasks
     }
     else {
         alert("Preencha todos os campos corretamente.");
@@ -195,6 +192,7 @@ form.addEventListener("submit", (event) => {
 });
 
 // Menu's functions
+// The switch above is used to get all the events in the page and call all the respective functions relative to the todolist.
 document.body.addEventListener("click", event => {
     switch (event.target.tagName) {
         case "IMG":

@@ -4,7 +4,7 @@ const { username } = form;
 
 document.querySelector("button").addEventListener("click", () => {
 
-    localStorage.setItem("user", JSON.stringify(username.value));    
+    localStorage.setItem("user", JSON.stringify(username.value)); // The data's name is saved on the localStorage.
 });
 
 
