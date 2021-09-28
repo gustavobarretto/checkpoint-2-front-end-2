@@ -3,9 +3,16 @@
 ## Integrantes
 
 [Eduardo de Araujo](https://github.com/eduardoaraujogomes)
+
 [Stefany Lovato](https://github.com/stefanylovato)
+
 [Lucas Fidelis](https://github.com/fidelismaia)
+
 [Gustavo Barretto](https://github.com/gustavobarretto)
+
+[Matheus Ferraioli]()
+
+[Mariana Lima]()
 
 
 ## Objetivo
