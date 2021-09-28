@@ -59,17 +59,25 @@ form.addEventListener("submit", (event) => {
         modal.style.display = "none";
 
         form.reset();
-
-        organizeTasks();
+        
+        
+        const checkBox = document.querySelectorAll(".tasks img");
+        checkBox.forEach(checkBox => {
+            organizeTasks(checkBox);
+        })
 
         checkTasks();
+
+        
 
         tasksFunctions();
     }
     else {
         alert("Preencha todos os campos corretamente.");
     }
-
+    checkValidationTask = false;
+    checkValidationDate = false;
+    checkValidationDescription = false;
 });
 
 

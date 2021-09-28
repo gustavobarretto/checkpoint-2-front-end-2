@@ -59,7 +59,10 @@ fetch("https://jsonplaceholder.typicode.com/todos/")
         }
         
     })
-    organizeTasks(); 
+    const tasks = document.querySelectorAll(".tasks img")
+    tasks.forEach( task => {
+        organizeTasks(task);
+    })
     tasksFunctions();
     checkTasks();
 })

@@ -4,11 +4,14 @@ import { organizeTasks } from './organizeTasks.js';
 export const checkTasks = () => {
     const checkBox = document.querySelectorAll(".tasks img")
     checkBox.forEach(checkBox => {
-        checkBox.addEventListener('click', () => {
+        checkBox.addEventListener("click", () => {
         checkBox.parentNode.classList.toggle("checked");
-        checkBox.parentNode.classList.contains("checked") ?
-        checkBox.src = "../assets/checkbox.svg" :
-        checkBox.src = "../assets/box.svg";
+
+        if (checkBox.parentNode.classList.contains("checked")) {
+            checkBox.src = "../assets/checkbox.svg"
+        } else {
+            checkBox.src = "../assets/box.svg"
+        }
 
         if (checkBox.parentNode.classList.contains("active")) {
             ((checkBox.parentElement).lastElementChild).style.display = "none";
@@ -16,7 +19,7 @@ export const checkTasks = () => {
         }
 
         setTimeout( () => {
-            organizeTasks();
+            organizeTasks(checkBox);
         }, 600)
      
     })})};
