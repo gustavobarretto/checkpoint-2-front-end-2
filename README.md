@@ -1,13 +1,8 @@
 # To-Do List - Checkpoint 2 - Front-end 2
 
 ## Integrantes
-	- [Eduardo de Araujo](https://github.com/eduardoaraujogomes)
-	- [Eduardo de Araujo](https://github.com/eduardoaraujogomes);
-	- [Stefany Lovato](https://github.com/stefanylovato);
-	- [Gustavo Barretto](https://github.com/gustavobarretto)
-	- [Lucas Fidelis](https://github.com/fidelismaia)
-	- [Matheus Ferraioli]()
-	- [Mariana Lima]()
+
+[Eduardo de Araujo](https://github.com/eduardoaraujogomes)
 
 ## Objetivo
 
