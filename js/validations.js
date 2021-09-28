@@ -4,10 +4,11 @@ let labels = document.querySelectorAll('label');
 const [taskLabel, dateLabel, descriptionLabel] = labels;
 const form = document.forms.formtask;
 const { task, date, description } = form;
+const newTask = document.querySelector(".nova-tarefa");
 const dateNow = new Date().getTime();
-let checkValidationTask;
-let checkValidationDate;
-let checkValidationDescription;
+export let checkValidationTask;
+export let checkValidationDate;
+export let checkValidationDescription;
 
 //function to  transform a inputed string date in a real date
 const inputedDate = date => {
@@ -16,6 +17,15 @@ const inputedDate = date => {
 
     return realDate;
 };
+
+newTask.addEventListener("click", () => {
+    if (checkValidationTask && checkValidationDate && checkValidationTask) {
+        checkValidationTask = false;
+        checkValidationDate = false;
+        checkValidationDescription = false;
+    }
+});
+
 
 
 //Validation for the Task Input
@@ -85,8 +95,8 @@ date.addEventListener('focusout', () => {
 description.addEventListener('input', (e) => {
     if (/(?=(?:.*[a-zA-Z]){10,1000})/.test(e.target.value)) {
         description.style.border = '2px solid lightgreen';
-        descriptionLabel.innerHTML = `Descrição da Tarefa`;
         descriptionLabel.style.color = "#000";
+        descriptionLabel.innerHTML = `Descrição da Tarefa`;
         checkValidationDescription = true;
 
     } else {
@@ -98,7 +108,6 @@ description.addEventListener('input', (e) => {
 });
 
 description.addEventListener('focusout', () => {
-    task.style.border = 'none';
-});
+    description.style.border = 'none';
 
-export { checkValidationTask, checkValidationDate, checkValidationDescription };
+});
